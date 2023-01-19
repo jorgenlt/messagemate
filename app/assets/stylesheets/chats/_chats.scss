@@ -1,0 +1,57 @@
+#chat-container {
+  display: flex;
+}
+
+#users {
+  width: 25%;
+  height: 100vh;
+}
+
+.user {
+  margin: 10px 0px;
+  border-bottom: 1px solid gray;
+  font-weight: bold;
+  display: flex;
+
+  i {
+    margin: 0px 10px;
+  }
+}
+
+#chat {
+  width: 75%;
+  height: 100vh;
+  border-left: 1px solid gray;
+}
+
+#messages {
+  height: 85vh;
+}
+
+#new-message {
+  height: 15vh;
+  border-top: 1px solid gray;
+  // display: flex;
+  align-items: center;
+}
+
+#message-form {
+  display: flex;
+
+  #message-text {
+    display: flex;
+    align-items: center;
+    flex: 3;
+
+  }
+
+  .text {
+    width: 100%;
+  }
+
+  #send-message {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+}
