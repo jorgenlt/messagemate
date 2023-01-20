@@ -1,25 +1,36 @@
 <div id="chat-container">
 
 <div id="users">
-  <div class="user"><i class="fa-solid fa-user"></i><p>user 1</p></div>
-  <div class="user"><i class="fa-solid fa-user"></i><p>user 2</p></div>
-  <div class="user"><i class="fa-solid fa-user"></i><p>user 3</p></div>
-  <div class="user"><i class="fa-solid fa-user"></i><p>user 4</p></div>
-  <div class="user"><i class="fa-solid fa-user"></i><p>user 5</p></div>
-  <div class="user"><i class="fa-solid fa-user"></i><p>user 6</p></div>
+  <div class="user">
+    <div class="profile-picture">
+      <i class="fa-solid fa-user"></i>
+    </div>
+    <div class="user-content">
+      <div class="username">username123</div>
+      <div class="last-chat">You: Lets meet at 4pm... • Jan 20</div>
+    </div>
+  </div>
+
 </div>
 
 <div id="chat">
   <div id="messages">
+    <div class="message">
+      <div class="message-sent-at"><span>Jan 20, 8.55 PM</span></div>
+      <div class="message-content">
+        <p>Lorem ipsum dolor sit.</p>
+      </div>
+    </div>
   </div>
+
   <div id="new-message">
     <%= simple_form_for @chats do |f| %>
       <div id="message-form">
-        <div id="message-text">
-          <%= f.input :description, as: :text, label: false, class: "message-text-field" %>
+        <div class="message-text">
+          <%= f.input :message, as: :text, label: false, input_html: { rows: 1 } %>
         </div>
-        <div id="send-message">
-          <%= f.button :submit, 'Send message', class: "btn btn-primary" %>
+        <div class="send-message">
+          <%= f.button :submit, 'Send message', class: ""%>
         </div>
       </div >
     <% end %>
