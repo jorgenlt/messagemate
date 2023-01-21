@@ -1,8 +1,7 @@
 class ChatsController < ApplicationController
 
-  def chats
-    @messages = Message.where(user_id: current_user.id).or(Message.where(recipient_id: current_user.id))
-    @conversations = @messages.select(:user_id, :recipient_id).distinct
+  def _chats
+
   end
 
   def create

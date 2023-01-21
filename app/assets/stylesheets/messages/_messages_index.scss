@@ -1,0 +1,134 @@
+#chat {
+  width: 55vw;
+  margin-left: 20px;
+
+  p {
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+
+  span {
+    font-size: 12px;
+    margin: 0px 0px 0px 10px;
+  }
+}
+
+#messages {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+
+  .message {
+    margin: 10px 10px;
+  }
+}
+
+// .message {
+//   .message-content {
+//     background-color: lightgray;
+//     padding: 10px;
+//     border-radius: 20px;
+//   }
+// }
+
+.message-current-user {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  .message-content {
+    background-color: darkcyan;
+    padding: 10px;
+    border-radius: 20px;
+    max-width: 300px;
+  }
+}
+
+.message-connected-user {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  .message-content {
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 20px;
+    max-width: 300px;
+  }
+}
+
+#new-message {
+  position: fixed;
+  bottom: 0px;
+  width: -webkit-fill-available;
+  margin: 10px 0px;
+}
+
+#message-form {
+  display: flex;
+
+  .message-text {
+    display: flex;
+    align-items: center;
+    margin: 0px 0px 0px 10px;
+    padding: 0px 0px;
+    width: -webkit-fill-available;
+  }
+
+  // setting default bootstrap margin to 0.
+  .mb-3 {
+    margin-bottom: 0px !important;
+  }
+
+  .text {
+    width: -webkit-fill-available;
+    border-radius: 20px;
+    resize:none;
+  }
+
+  .send-message {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+}
+
+/*--------------------
+Message Box
+--------------------*/
+
+// .message-text {
+//   flex: 0 1 42px;
+//   width: 90%;
+//   background: #fff;
+//   margin:2px auto;
+// /*-webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.4);
+// -moz-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.4);
+// box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.4);*/
+//   /*background: rgba(0, 0, 0, 0.3);
+//     border-top:1px solid #e3e3e3;*/
+//   padding: 10px;
+//   position: relative;
+//   -webkit-border-radius: 20px;
+//   -moz-border-radius: 20px;
+//   border-radius: 20px;
+//   height:14px;
+//   border:1px solid #ccc;
+
+//   & .text {
+//     background: none;
+//     border: none;
+//     outline: none!important;
+//     resize: none;
+//     /* color: rgba(255, 255, 255, .8);*/
+//     font-size: 15px;
+//     height: 24px;
+//     margin: 0;
+//     padding-right: 20px;
+//     width: 265px;
+//     color: #444;
+//   }
+//   // textarea:focus:-webkit-placeholder {
+//   //   color: transparent;
+//   // }
+// }

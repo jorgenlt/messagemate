@@ -9,20 +9,37 @@
   <span>Logged in as <%= current_user.username %>, id = <%= current_user.id %></span>
   <div id="messages">
     <% @messages.each do |message| %>
-      <div class="message">
-        <div class="message-sent-at">
-          <span>
-          Sent <%= time_ago_in_words(message.created_at) %> ago,
-          from <%= User.find(message.user_id).username %> (id = <%= message.user_id %>)
-          to <%= User.find(message.recipient_id).username %>
-          (id = <%= message.recipient_id %>)
-          </span>
+      <% if message.user_id == current_user.id %>
+        <div class="message-current-user">
+          <div class="message-sent-at">
+            <span>
+            Sent <%= time_ago_in_words(message.created_at) %> ago,
+            from <%= User.find(message.user_id).username %> (id = <%= message.user_id %>)
+            to <%= User.find(message.recipient_id).username %>
+            (id = <%= message.recipient_id %>)
+            </span>
 
+          </div>
+          <div class="message-content">
+            <p><%= message.message_body %></p>
+          </div>
         </div>
-        <div class="message-content">
-          <p><%= message.message_body %></p>
+      <% else %>
+        <div class="message-connected-user">
+          <div class="message-sent-at">
+            <span>
+            Sent <%= time_ago_in_words(message.created_at) %> ago,
+            from <%= User.find(message.user_id).username %> (id = <%= message.user_id %>)
+            to <%= User.find(message.recipient_id).username %>
+            (id = <%= message.recipient_id %>)
+            </span>
+
+          </div>
+          <div class="message-content">
+            <p><%= message.message_body %></p>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 
