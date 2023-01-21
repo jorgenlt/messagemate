@@ -1,22 +1,40 @@
 <div id="users">
-  <div class="user">
-    <div class="profile-picture">
-      <i class="fa-solid fa-user"></i>
-    </div>
-    <div class="user-content">
-      <% if @messages.length.zero? %>
-        No messages.
-      <% else %>
-        <div class="username">
-          <% if @messages.first.user_id == current_user.id %>
-            <%= User.find(@messages.first.recipient_id).username %>
-          <% else %>
-            <%= User.find(@messages.first.user_id).username %>
-          <% end %>
-        </div>
-        <div class="last-chat"><%= @messages.last.message_body %></div>
-      <% end %>
+  <p>New message</p>
 
-    </div>
-  </div>
+    <%# finding current users conversations %>
+    <%# messages where current_user is sender or recipient %>
+    <% messages = Message.where(user_id: current_user.id).or(Message.where(recipient_id: current_user.id)) %>
+    <% connected_users = [] %>
+    <% messages.each do |message| %>
+      <% if message.user_id != current_user.id %>
+        <% connected_users << message.user_id %>
+      <% end %>
+      <% if message.recipient_id != current_user.id %>
+        <% connected_users << message.recipient_id %>
+      <% end %>
+    <% end %>
+    <%# conversations by message.id %>
+    <% unique_users = connected_users.uniq %>
+    <% unique_users.each do |user| %>
+      <%= link_to user_messages_path(user) do %>
+        <%#= hidden_field_tag 'user_id', user %>
+        <div class="user">
+          <div class="profile-picture">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="user-content">
+            <% if messages.length.zero? %>
+              No messages.
+            <% else %>
+              <div class="username">
+                <%= User.find(user).username %>
+              </div>
+              <div class="last-chat"><%= Message.where(user_id: current_user.id, recipient_id: user).or(Message.where(user_id: user, recipient_id: current_user.id)).last.message_body %></div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+
 </div>
