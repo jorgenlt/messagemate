@@ -29,7 +29,7 @@
               <div class="username">
                 <%= User.find(user).username %>
               </div>
-              <div class="last-chat">last message...<%= %></div>
+              <div class="last-chat"><%= Message.where(user_id: current_user.id, recipient_id: user).or(Message.where(user_id: user, recipient_id: current_user.id)).last.message_body %></div>
             <% end %>
           </div>
         </div>

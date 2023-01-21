@@ -45,7 +45,7 @@
 
   <div id="new-message">
     <%= simple_form_for [@user, @message] do |f| %>
-      <%= hidden_field_tag "message[recipient_id]", "#{recipient.id}" %>
+      <%= hidden_field_tag "message[recipient_id]", "#{@connected_user_id}" %>
       <div id="message-form">
         <div class="message-text">
           <%= f.input :message_body, as: :text, label: false, input_html: { rows: 1 } %>

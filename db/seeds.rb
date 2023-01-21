@@ -21,7 +21,7 @@ recipient_id_counter = 10
     user_id: user_id_counter,
     recipient_id: recipient_id_counter,
     message_body: "Hello #{User.find(recipient_id_counter).username}, this is #{User.find(user_id_counter).username}."
-    )
+  )
   user_id_counter += 1
   recipient_id_counter -= 1
 end
