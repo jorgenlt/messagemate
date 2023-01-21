@@ -1,4 +1,9 @@
+<%# recipient %>
+<% recipient = User.find(10) %>
+
 <div id="chat-container">
+
+<%= render 'chats/chats' %>
 
 <div id="chat">
   <span>Logged in as <%= current_user.username %>, id = <%= current_user.id %></span>
@@ -22,17 +27,17 @@
   </div>
 
   <div id="new-message">
-    <% recipient_id = "foobar" %>
-    <%#= simple_form_for [@message, @message] do |f| %>
+    <%= simple_form_for new_user_message_path(current_user) do |f| %>
+      <%= hidden_field_tag "recipient_id[recipient_id]", "#{recipient.id}" %>
       <div id="message-form">
         <div class="message-text">
-          <%#= f.input :message, as: :text, label: false, input_html: { rows: 1 } %>
+          <%= f.input :message, as: :text, label: false, input_html: { rows: 1 } %>
         </div>
         <div class="send-message">
-          <%#= f.button :submit, 'Send message', class: ""%>
+          <%= f.button :submit, 'Send message', class: ""%>
         </div>
       </div >
-    <%# end %>
+    <% end %>
   </div>
 
 </div>
