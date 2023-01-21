@@ -4,10 +4,19 @@
       <i class="fa-solid fa-user"></i>
     </div>
     <div class="user-content">
-      <% recipient_user_id = 10 %>
-      <% recipient_user = User.find(recipient_user_id)%>
-      <div class="username"><%= recipient_user.username %></div>
-      <div class="last-chat"><%= Message.where({ user_id: current_user.id, recipient_id: recipient_user_id }).last.message_body %></div>
+      <% if @messages.length.zero? %>
+        No messages.
+      <% else %>
+        <div class="username">
+          <% if @messages.first.user_id == current_user.id %>
+            <%= User.find(@messages.first.recipient_id).username %>
+          <% else %>
+            <%= User.find(@messages.first.user_id).username %>
+          <% end %>
+        </div>
+        <div class="last-chat"><%= @messages.last.message_body %></div>
+      <% end %>
+
     </div>
   </div>
 </div>
