@@ -27,11 +27,11 @@
   </div>
 
   <div id="new-message">
-    <%= simple_form_for new_user_message_path(current_user) do |f| %>
-      <%= hidden_field_tag "recipient_id[recipient_id]", "#{recipient.id}" %>
+    <%= simple_form_for [@user, @message] do |f| %>
+      <%= hidden_field_tag "message[recipient_id]", "#{recipient.id}" %>
       <div id="message-form">
         <div class="message-text">
-          <%= f.input :message, as: :text, label: false, input_html: { rows: 1 } %>
+          <%= f.input :message_body, as: :text, label: false, input_html: { rows: 1 } %>
         </div>
         <div class="send-message">
           <%= f.button :submit, 'Send message', class: ""%>
