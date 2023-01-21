@@ -14,17 +14,22 @@
 </div>
 
 <div id="chat">
+  <span>Logged in as <%= current_user.username %>, id = <%= current_user.id %></span>
   <div id="messages">
-    <div class="message">
-      <div class="message-sent-at"><span>Jan 20, 8.55 PM</span></div>
-      <div class="message-content">
-        <p>Lorem ipsum dolor sit.</p>
+    <% @messages.each do |message| %>
+      <div class="message">
+        <div class="message-sent-at"><span>Jan 20, 8.55 PM</span></div>
+        <div class="message-content">
+          <p>Lorem ipsum dolor sit.</p>
+          <p><%= message.message_body %></p>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 
   <div id="new-message">
-    <%= simple_form_for @chats do |f| %>
+    <% recipient_id = "foobar" %>
+    <%= simple_form_for [@message, @message] do |f| %>
       <div id="message-form">
         <div class="message-text">
           <%= f.input :message, as: :text, label: false, input_html: { rows: 1 } %>
