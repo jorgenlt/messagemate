@@ -1,0 +1,6 @@
+<p>new message:</p>
+
+<%= simple_form_for @chatroom do |f| %>
+  <%= f.input :username, label: false, placeholder: "Input username" %>
+  <%= f.button :submit, 'Connect to user' %>
+<% end %>

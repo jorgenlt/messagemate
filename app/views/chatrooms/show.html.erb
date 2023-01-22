@@ -1,0 +1,49 @@
+<div id="chat-container">
+
+<%#= render 'chats/chats' %>
+
+<div id="chat">
+  <span>Logged in as <%= current_user.username %>, id = <%= current_user.id %>, chatroom_id = <%= @chatroom.id %></span>
+  <div id="messages">
+    <% @chatroom.messages.each do |message| %>
+
+      <div class="message-current-user">
+        <div class="message-sent-at">
+          <span>
+          Sent <%= time_ago_in_words(message.created_at) %> ago,
+          from <%#= User.find(message.user_id).username %> (id = <%#= message.user_id %>)
+          <%= message.user.username %>
+          to <%#= User.find(message.recipient_id).username %>
+          (id = <%#= message.recipient_id %>)
+          </span>
+        </div>
+        <div class="message-content">
+          <p><%= message.message_body %></p>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+
+  <div id="new-message">
+    <%= simple_form_for [@chatroom, @message] do |f| %>
+      <%#= hidden_field_tag "message[recipient_id]", "#{@connected_user_id}" %>
+      <div id="message-form">
+        <div class="message-text">
+          <%= f.input :message_body,
+                      as: :text,
+                      label: false,
+                      placeholder: "edit placeholder later, message goes here...",
+                      input_html: { rows: 1 }
+                    %>
+        </div>
+        <div class="send-message">
+          <%= f.button :submit, 'Send message', class: ""%>
+        </div>
+      </div >
+    <% end %>
+  </div>
+
+</div>
+
+</div>
