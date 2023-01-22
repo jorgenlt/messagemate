@@ -6,16 +6,18 @@ class MessagesController < ApplicationController
   end
 
   def create
+    # @chatroom = Chatroom.find(params[:chatroom_id])
     @message = Message.new(message_params)
-    @message.user_id = current_user.id
+    @message.chatroom_id = @chatroom
+    @message.user = current_user
     if @message.save
-      redirect_to user_messages_path(message_params[:recipient_id])
+      redirect_to chatroom_path(@chatroom)
     else
       flash.alert = "Error. Message was not sent."
     end
   end
 
   def message_params
-    params.require(:message).permit(:message_body, :recipient_id)
+    params.require(:message).permit(:message_body)
   end
 end
