@@ -1,47 +1,22 @@
 <div id="chat-container">
 
-<%#= render 'chats/chats' %>
+<%= render 'chatrooms/chatrooms_list' %>
 
-<div id="chat">
+  <div class="chat"
+    data-controller="chatroom-subscription"
+    data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+  >
   <span>Logged in as <%= current_user.username %>, id = <%= current_user.id %>, chatroom_id = <%= @chatroom.id %></span>
-  <div id="messages">
+  <div id="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
-      <% if current_user.id == message.user_id %>
-        <div class="message-current-user">
-          <div class="message-sent-at">
-            <span>
-            Sent <%= time_ago_in_words(message.created_at) %> ago,
-            from <%= message.user_id %> (id = <%= message.user_id %>)
-            <%= message.user.username %>
-            to <%= User.find(message.recipient_id).username %>
-            (id = <%= message.recipient_id %>)
-            </span>
-          </div>
-          <div class="message-content">
-            <p><%= message.message_body %></p>
-          </div>
-        </div>
-      <% else %>
-        <div class="message-connected-user">
-          <div class="message-sent-at">
-            <span>
-            Sent <%= time_ago_in_words(message.created_at) %> ago,
-            from <%= message.user_id %> (id = <%= message.user_id %>)
-            <%= message.user.username %>
-            to <%= User.find(message.recipient_id).username %>
-            (id = <%= message.recipient_id %>)
-            </span>
-          </div>
-          <div class="message-content">
-            <p><%= message.message_body %></p>
-          </div>
-        </div>
-      <% end %>
+      <%= render "messages/message", message: message %>
     <% end %>
   </div>
 
   <div id="new-message">
-    <%= simple_form_for [@chatroom, @message] do |f| %>
+    <%= simple_form_for [@chatroom, @message],
+      html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" },
+      class: "d-flex" } do |f| %>
       <div id="message-form">
         <div class="message-text">
           <%= f.input :message_body,

@@ -1,4 +1,4 @@
-#chat {
+.chat {
   width: 55vw;
   margin-left: 20px;
 
@@ -61,7 +61,7 @@
   position: fixed;
   bottom: 0px;
   width: -webkit-fill-available;
-  margin: 10px 0px;
+  background-color: $light-gray;
 }
 
 #message-form {
