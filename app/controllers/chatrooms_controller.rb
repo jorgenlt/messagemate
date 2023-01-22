@@ -8,9 +8,13 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.new
   end
 
+  # A chatroom is created with recipients id and username,
+  # and senders user_id.
   def create
-    @chatroom = Chatroom.new
-    @chatroom.recipient_id = User.where(username: chatroom_params(:username))
+    @chatroom = Chatroom.new(chatroom_params)
+    @chatroom.user_id = current_user.id
+    @chatroom.recipient_id = User.find_by(username: @chatroom.username).id
+    # @chatroom.recipient_id = User.where(username: chatroom_params[:username])
     if @chatroom.save
       redirect_to chatroom_path(@chatroom)
     else
