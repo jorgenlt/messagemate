@@ -1,0 +1,29 @@
+<div id="users">
+  <%= link_to 'New message', new_chatroom_path %>
+    <% chatrooms = Chatroom.where(user_id: current_user.id).or(Chatroom.where(recipient_id: current_user.id)) %>
+    <% chatrooms.each do |chatroom| %>
+      <%= link_to chatroom_path(chatroom) do %>
+        <div class="user">
+          <div class="profile-picture">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="user-content">
+            <div class="username">
+              <% if chatroom.user_id == current_user.id %>
+                <%= User.find(chatroom.recipient_id).username %>
+              <% else %>
+                <%= User.find(chatroom.user_id).username %>
+              <% end %>
+            </div>
+            <div class="last-chat">
+              <% if Message.where(chatroom_id: chatroom.id).length == 0 %>
+                Send a new message.
+              <% else %>
+                <%= Message.where(chatroom_id: chatroom.id).last.message_body%>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  <% end %>
+</div>
