@@ -16,6 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_22_032227) do
 
   create_table "chatrooms", force: :cascade do |t|
     t.integer "recipient_id"
+    t.string "username"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
