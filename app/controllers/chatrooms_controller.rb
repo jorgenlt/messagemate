@@ -22,6 +22,10 @@ class ChatroomsController < ApplicationController
     end
   end
 
+  def delete
+
+  end
+  
   private
 
   def chatroom_params
