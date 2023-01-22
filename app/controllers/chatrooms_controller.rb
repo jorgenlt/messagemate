@@ -21,7 +21,7 @@ class ChatroomsController < ApplicationController
       flash.alert = "Error! Chatroom was not created."
     end
   end
-  
+
   private
 
   def chatroom_params
