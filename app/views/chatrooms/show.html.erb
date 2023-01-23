@@ -7,10 +7,9 @@
     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
     data-chatroom-subscription-current-user-id-value="<%= current_user.id %>"
   >
-  <span>Logged in as <%= current_user.username %>, id = <%= current_user.id %>, chatroom_id = <%= @chatroom.id %></span>
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
-      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+      <div class="d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
         <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
           <%= render "messages/message", message: message %>
         </div>
@@ -27,12 +26,12 @@
           <%= f.input :message_body,
                       as: :text,
                       label: false,
-                      placeholder: "edit placeholder later, message goes here...",
+                      placeholder: "New message",
                       input_html: { rows: 1 }
                     %>
         </div>
         <div class="send-message">
-          <%= f.button :submit, 'Send message', class: ""%>
+          <%= f.button :submit, 'Send message', class: "btn btn-primary"%>
         </div>
       </div >
     <% end %>

@@ -1,14 +1,12 @@
 class ChatroomsController < ApplicationController
   def index
+    @new_chatroom = Chatroom.new
   end
 
   def show
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
-  end
-
-  def new
-    @chatroom = Chatroom.new
+    @new_chatroom = Chatroom.new
   end
 
   # A chatroom is created with recipients id and username,
@@ -18,7 +16,7 @@ class ChatroomsController < ApplicationController
     recipient = User.find_by(username: chatroom_params[:username])
     if Chatroom.where(user_id: current_user.id, recipient_id: recipient.id).exists? ||
        Chatroom.where(user_id: recipient.id, recipient_id: current_user.id).exists?
-      redirect_to new_chatroom_path
+      redirect_to root_path
       flash.alert = "You already have a chat going with this user."
     else
       @chatroom = Chatroom.new(chatroom_params)
@@ -28,7 +26,7 @@ class ChatroomsController < ApplicationController
       if @chatroom.save
         redirect_to chatroom_path(@chatroom)
       else
-        redirect_to new_chatroom_path
+        redirect_to root_path
         flash.alert = "Error! Chatroom was not created."
       end
     end

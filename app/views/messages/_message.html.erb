@@ -1,13 +1,9 @@
+<div class="message-sent-at">
+  <span>
+  Sent <%= time_ago_in_words(message.created_at) %> ago.
+  </span>
+</div>
 <div class="message">
-  <div class="message-sent-at">
-    <span>
-    Sent <%= time_ago_in_words(message.created_at) %> ago,
-    from <%= message.user_id %> (id = <%= message.user_id %>)
-    <%= message.user.username %>
-    to <%= User.find(message.recipient_id).username %>
-    (id = <%= message.recipient_id %>)
-    </span>
-  </div>
   <div class="message-content">
     <p><%= message.message_body %></p>
   </div>
