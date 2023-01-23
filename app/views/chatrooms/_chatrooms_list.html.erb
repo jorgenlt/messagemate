@@ -1,4 +1,4 @@
-<div id="users">
+<div class="users">
   <%= link_to 'New message', new_chatroom_path %>
     <% chatrooms = Chatroom.where(user_id: current_user.id).or(Chatroom.where(recipient_id: current_user.id)) %>
     <% chatrooms.each do |chatroom| %>
