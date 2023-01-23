@@ -13,16 +13,60 @@ puts 'Creating users...'
 end
 puts 'Users created.'
 
-# puts 'Creating messages...'
 # user_id_counter = 1
 # recipient_id_counter = 10
+# puts 'Creating chatrooms...'
 # 10.times do
-#   Message.create(
-#     user_id: user_id_counter,
+#   Chatroom.create(
 #     recipient_id: recipient_id_counter,
-#     message_body: "Hello #{User.find(recipient_id_counter).username}, this is #{User.find(user_id_counter).username}."
+#     username: User.find(user_id_counter).username,
+#     user_id: user_id_counter
 #   )
 #   user_id_counter += 1
 #   recipient_id_counter -= 1
 # end
-# puts 'Messages created'
+# puts 'Chatrooms created.'
+
+puts 'Creating chatroom...'
+
+Chatroom.create(
+  recipient_id: 2,
+  username: User.find(2).username,
+  user_id: 1
+)
+puts 'Chatroom created.'
+
+puts 'Creating messages...'
+10.times do
+  Message.create(
+    user_id: 1,
+    recipient_id: 2,
+    chatroom_id: 1,
+    message_body: Faker::Fantasy::Tolkien.poem
+  )
+
+  Message.create(
+    user_id: 2,
+    recipient_id: 1,
+    chatroom_id: 1,
+    message_body: Faker::Fantasy::Tolkien.poem
+  )
+end
+puts 'Messages created.'
+
+# puts 'Creating messages...'
+# user_id_counter = 1
+# recipient_id_counter = 10
+# chatroom_id_counter = 1
+# 10.times do
+  # Message.create(
+  #   user_id: user_id_counter,
+  #   recipient_id: recipient_id_counter,
+  #   chatroom_id: chatroom_id_counter,
+  #   message_body: "Hello #{User.find(recipient_id_counter).username}, this is #{User.find(user_id_counter).username}."
+  # )
+#   user_id_counter += 1
+#   recipient_id_counter -= 1
+#   chatroom_id_counter += 1
+# end
+# puts 'Messages created.'
