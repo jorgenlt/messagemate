@@ -2,11 +2,16 @@
   display: flex;
 }
 
+.submit-button {
+  color: $primary;
+}
+
 .users {
   // min-width: 300px;
   // max-width: 350px;
   width: 250px;
   min-height: 100vh;
+  position: fixed;
   border-right: 1px solid lightgray;
 
   a {
@@ -21,7 +26,7 @@
 // }
 
 .new-chat {
-  margin: 10px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
   padding: 10px 0px;
   background-color: $light-gray;
   border-bottom: 1px solid lightgray;
@@ -57,7 +62,7 @@
   .send-message {
     display: flex;
     align-items: center;
-    margin: 10px;
+    margin: 10px 10px 10px 0px;
   }
 }
 
@@ -87,6 +92,10 @@
 
   .last-chat {
     font-size: 14px;
+    overflow: hidden;
+    max-width: 20ch;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
 }

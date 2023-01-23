@@ -1,7 +1,8 @@
 .chat {
   width: 100%;
   max-width: 700px;
-  padding: 50px 20px 0px 20px;
+  padding: 50px 10px 0px 10px;
+  margin-left: 250px;
   // border-right: 1px solid lightgray;
 
   p {
@@ -16,7 +17,8 @@
 }
 
 .messages {
-  height: 85vh;
+  // height: 85vh;
+  margin-bottom: 70px;
   display: flex;
   flex-direction: column;
 
@@ -25,11 +27,15 @@
   }
 }
 
+.sender-style, .receiver-style {
+  margin-top: 5px;
+}
+
 .sender-style {
 
   .message-content {
-    background-color: $primary;
-    color: white;
+    background-color: $sender;
+    color: $white;
     padding: 5px 10px;
     border-radius: 20px;
   }
@@ -50,7 +56,8 @@
 .receiver-style {
 
   .message-content {
-    background-color: lightslategray;
+    background-color: $receiver;
+    color: $black;
     padding: 5px 10px;
     border-radius: 20px;
   }
@@ -79,7 +86,7 @@
 #message-form {
   display: flex;
   width: 100%;
-  margin-right: 20px;
+  margin-right: 10px;
 
   .message-text {
     display: flex;
@@ -103,6 +110,6 @@
   .send-message {
     display: flex;
     align-items: center;
-    margin: 10px;
+    margin: 10px 10px 10px 0px;
   }
 }
