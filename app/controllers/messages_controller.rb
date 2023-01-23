@@ -1,22 +1,18 @@
 class MessagesController < ApplicationController
-  def index
-    @connected_user_id = params[:user_id]
-    @messages = Message.where(user_id: current_user.id, recipient_id: @connected_user_id).or(Message.where(user_id: @connected_user_id, recipient_id: current_user.id))
-    @message = Message.new
-  end
-
   def create
     @chatroom = Chatroom.find(params[:chatroom_id])
     @message = Message.new(message_params)
     @message.chatroom_id = @chatroom.id
     @message.user_id = current_user.id
 
+    # setting sender/receiver of the message
     if current_user.id == @chatroom.user_id
       @message.recipient_id = @chatroom.recipient_id
     else
       @message.recipient_id = @chatroom.user_id
     end
 
+    # instant message with action cable
     if @message.save
       ChatroomChannel.broadcast_to(
         @chatroom,
