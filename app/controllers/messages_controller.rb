@@ -1,4 +1,8 @@
 class MessagesController < ApplicationController
+  # skip authorization on MessagesController with the before_action
+  before_action :skip_authorization
+
+
   def create
     @chatroom = Chatroom.find(params[:chatroom_id])
     @message = Message.new(message_params)
