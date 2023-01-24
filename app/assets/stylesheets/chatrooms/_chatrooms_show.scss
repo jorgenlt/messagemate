@@ -28,7 +28,7 @@
 }
 
 .sender-style, .receiver-style {
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .sender-style {
@@ -81,6 +81,14 @@
   width: -webkit-fill-available;
   max-width: 700px;
   background-color: $light-gray;
+
+  .submit-button {
+    font-size: 14px;
+  }
+
+  .submit-button:hover {
+    color: darken($primary, 15);
+  }
 }
 
 #message-form {
@@ -112,4 +120,14 @@
     align-items: center;
     margin: 10px 10px 10px 0px;
   }
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-height {
+  height: 100vh;
 }

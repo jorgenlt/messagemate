@@ -17,6 +17,18 @@
   a {
     text-decoration: none;
   }
+
+  .log-out {
+    position: fixed;
+    bottom: 10px;
+    left: 0px;
+    font-size: 12px;
+
+    a {
+      font-size: 14px;
+      margin: 5px 20px;
+    }
+  }
 }
 
 // .new-chat {
@@ -30,11 +42,8 @@
   background-color: $light-gray;
   border-bottom: 1px solid lightgray;
 
-  .log-out {
-    a {
-      font-size: 14px;
-      margin: 5px 20px;
-    }
+  .submit-button {
+    font-size: 14px;
   }
 
   p {
@@ -79,6 +88,7 @@
 .user {
   margin: 10px 0px;
   display: flex;
+  color: $black;
 
   i {
     font-size: 25px;
