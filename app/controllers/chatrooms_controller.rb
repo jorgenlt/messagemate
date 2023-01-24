@@ -1,12 +1,26 @@
 class ChatroomsController < ApplicationController
   def index
     @new_chatroom = Chatroom.new
+
+    @chatroom = policy_scope(Chatroom)
+    # authorize @chatroom
   end
 
   def show
+
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
     @new_chatroom = Chatroom.new
+
+    # authorize viewers of the chatrooms
+    @chatrooms = policy_scope(Chatroom)
+    authorize @chatroom
+  end
+
+  def new
+    # # authorize everyone to create a new chatroom with another user.
+    # @chatroom = policy_scope(Chatroom)
+    # authorize @chatroom
   end
 
   # A chatroom is created with recipients id and username,
@@ -16,7 +30,7 @@ class ChatroomsController < ApplicationController
     if User.find_by(username: chatroom_params[:username]).present?
       recipient = User.find_by(username: chatroom_params[:username])
       if Chatroom.where(user_id: current_user.id, recipient_id: recipient.id).exists? ||
-         Chatroom.where(user_id: recipient.id, recipient_id: current_user.id).exists?
+        Chatroom.where(user_id: recipient.id, recipient_id: current_user.id).exists?
         redirect_to root_path
         flash.alert = "You already have a chat going with this user."
       else
@@ -34,6 +48,10 @@ class ChatroomsController < ApplicationController
       redirect_to root_path
       flash.alert = "User does not exist. Try again."
     end
+
+    # authorize everyone to create a new chatroom with another user.
+    @chatroom = policy_scope(Chatroom)
+    authorize @chatroom
   end
 
   private
