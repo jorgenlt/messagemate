@@ -7,7 +7,16 @@
 }
 
 #new-session {
-  width: 300px;
+  width: 350px;
   padding: 30px;
-  box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.15);
+  box-shadow: 5px 5px 80px rgba(0, 0, 0, 0.40);
+  border-radius: 40px;
+}
+
+.sign-up-links {
+  margin-top: 20px;
+
+  p {
+    margin: 0px 0px;
+  }
 }
