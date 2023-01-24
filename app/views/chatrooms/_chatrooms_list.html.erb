@@ -1,9 +1,6 @@
 <div class="users">
   <div class="new-chat">
-    <div class="log-out">
-      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>
-    </div>
-    <p>Connect to user</p>
+    <p class="d-none">Connect to user</p>
     <%= simple_form_for @new_chatroom do |f| %>
       <div class="new-chat-content">
         <div class="message-text">
@@ -15,7 +12,7 @@
                     %>
         </div>
         <div class="send-message">
-          <%= f.button :submit, 'Add', class: "submit-button" %>
+          <%= f.button :submit, 'ADD', class: "submit-button" %>
         </div>
       </div>
     <% end %>
@@ -47,4 +44,8 @@
       </div>
     <% end %>
   <% end %>
+
+  <div class="log-out">
+    <%= link_to "SIGN OUT", destroy_user_session_path, data: {turbo_method: :delete} %>
+  </div>
 </div>
