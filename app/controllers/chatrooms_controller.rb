@@ -56,11 +56,11 @@ class ChatroomsController < ApplicationController
     authorize @chatroom
   end
 
-  def recipient(message)
-    if message.user_id == current_user.id
-      User.find(message.recipient_id).username
+  def recipient(chatroom)
+    if chatroom.user_id == current_user.id
+      User.find(chatroom.recipient_id).username
     else
-      User.find(message.user_id).username
+      User.find(chatroom.user_id).username
     end
   end
 

@@ -4,7 +4,7 @@ import { createConsumer } from "@rails/actioncable"
 // Connects to data-controller="chatroom-subscription"
 export default class extends Controller {
   static values = { chatroomId: Number, currentUserId: Number }
-  static targets = ["messages"]
+  static targets = ["messages", "messagesent"]
 
 
   connect() {
