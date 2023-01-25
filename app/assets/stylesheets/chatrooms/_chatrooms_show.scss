@@ -24,6 +24,7 @@
 
   .message {
     margin: 10px 10px;
+    cursor: default;
   }
 }
 
@@ -44,7 +45,7 @@
     position: relative;
 
     span {
-      margin: 0px 10px;
+      margin: 0px 20px 10px 0px;
       position: absolute;
       width: max-content;
       bottom: -5px;
@@ -66,7 +67,7 @@
     position: relative;
 
     span {
-      margin: 0px 10px;
+      margin: 0px 0px 10px 20px;
       position: absolute;
       width: max-content;
       bottom: 0;
@@ -156,6 +157,7 @@
     color: $black;
     font-size: 16px;
     font-weight: bold;
+    margin-left: 10px;
   }
 }
 
