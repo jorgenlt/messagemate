@@ -131,3 +131,56 @@
 .full-height {
   height: 100vh;
 }
+
+#mobile-navbar {
+  display: none;
+  position: fixed;
+  top: 0px;
+  background-color: $body-background;
+  width: 100vw;
+  padding: 10px 10px;
+  margin: 0px 0px;
+  z-index: 99;
+  border-bottom: 1px solid lightgray;
+
+  a {
+    text-decoration: none;
+  }
+
+  .back-to-chat-list {
+    font-size: 16px;
+    margin: 0px;
+  }
+
+  .recipient-message {
+    color: $black;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #render-chat-list {
+    display: none;
+  }
+
+  #mobile-navbar {
+    display: flex;
+  }
+
+  .chat {
+    margin-left: 0px;
+  }
+
+  .messages {
+    margin-bottom: 50px;
+  }
+
+  .new-message {
+    // border-top: 1px solid lightgray;
+  }
+
+  .new-chat .submit-button {
+    font-size: 16px;
+}
+}

@@ -119,3 +119,25 @@
   }
 
 }
+
+@media only screen and (max-width: 600px) {
+  .users {
+    width: 100%;
+    border-right: none;
+    position: unset;
+    margin: 0px 10px 50px 10px;
+    min-height: auto;
+  }
+
+  .new-chat {
+    .text {
+      width: 100%;
+    }
+  }
+
+  .user {
+    .last-chat {
+      max-width: 32ch;
+    }
+  }
+}

@@ -1,6 +1,9 @@
 <div class="chat-container">
 
-<%= render 'chatrooms/chatrooms_list' %>
+<div id="render-chat-list">
+  <%= render 'chatrooms/chatrooms_list' %>
+</div>
+
 
   <div class="chat"
     data-controller="chatroom-subscription"
@@ -9,6 +12,12 @@
   >
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
+<div id="mobile-navbar">
+  <%= link_to root_path do %>
+    <span class="back-to-chat-list"><i class="fa-solid fa-arrow-left"></i> BACK</span>
+    <span class="recipient-message"><%= recipient(message) %></span>
+  <% end %>
+</div>
       <div class="d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
         <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
           <%= render "messages/message", message: message %>
