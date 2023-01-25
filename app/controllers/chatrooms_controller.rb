@@ -1,4 +1,6 @@
 class ChatroomsController < ApplicationController
+  helper_method :recipient
+
   def index
     @new_chatroom = Chatroom.new
 
@@ -52,6 +54,14 @@ class ChatroomsController < ApplicationController
     # authorize everyone to create a new chatroom with another user.
     @chatroom = policy_scope(Chatroom)
     authorize @chatroom
+  end
+
+  def recipient(message)
+    if message.user_id == current_user.id
+      User.find(message.recipient_id).username
+    else
+      User.find(message.user_id).username
+    end
   end
 
   private

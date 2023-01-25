@@ -1,4 +1,4 @@
-#new-session-container {
+#new-session-container, #sign-up-container {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-#new-session {
+#new-session, #sign-up {
   width: 350px;
   padding: 30px;
   box-shadow: 5px 5px 80px rgba(0, 0, 0, 0.40);
@@ -22,5 +22,13 @@
 
   p {
     margin: 0px 0px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #new-session, #sign-up {
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0px;
   }
 }
