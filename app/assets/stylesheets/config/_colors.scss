@@ -1,17 +1,41 @@
 // Define variables for your color scheme
-$body-background:           #F4F4F4;
-$pri:                       #0D6EFD;
-$white:                     white;
-$black:                     black;
-$sender:                    #0D6EFD;
-$receiver:                  lightgray;
-
-
 // For example:
+
 $red: #FD1015;
 $blue: #0D6EFD;
 $yellow: #FFC65A;
 $orange: #E67E22;
 $green: #1EDD88;
 $gray: #0E0000;
-$light-gray: #F4F4F4;
+$lightgray: lightgray;
+
+// // Color scheme 1
+// $body-background:           #F4F4F4;
+// $pri:                       #0D6EFD;
+// $white:                     white;
+// $black:                     black;
+// $borders:                   $lightgray;
+// $user-color:                $black;
+// $profile-pic-bg:$black      $lightgray;
+// $mobile-recipient-color:    $black;
+// $message-color-sender:      $white;
+// $message-color-receiver:    $black;
+// $sender-bg:                 #0D6EFD;
+// $receiver-bg:               $lightgray;
+
+// Color scheme 2
+$pri:                       #a5ff8e;
+$sec:                       #ceffc2;
+$white:                     #F5F5F5;
+$black:                     #121416;
+$body-background:           $black;
+$body-text-color:           $white;
+$borders:                   #5c5c5c;
+$user-color:                $white;
+$profile-pic-bg:            $lightgray;
+$mobile-recipient-color:    $white;
+$message-color-sender:      $black;
+$message-color-receiver:    $black;
+$sender-bg:                 $pri;
+$receiver-bg:               $white;
+$form-control-color:        $white;

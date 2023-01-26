@@ -6,7 +6,7 @@
   // border-right: 1px solid lightgray;
 
   p {
-    font-size: 14px;
+    font-size: 15px;
     margin-bottom: 0px;
   }
 
@@ -35,8 +35,8 @@
 .sender-style {
 
   .message-content {
-    background-color: $sender;
-    color: $white;
+    background-color: $sender-bg;
+    color: $message-color-sender;
     padding: 5px 10px;
     border-radius: 20px;
   }
@@ -57,8 +57,8 @@
 .receiver-style {
 
   .message-content {
-    background-color: $receiver;
-    color: $black;
+    background-color: $receiver-bg;
+    color: $message-color-receiver;
     padding: 5px 10px;
     border-radius: 20px;
   }
@@ -81,14 +81,14 @@
   bottom: 0px;
   width: -webkit-fill-available;
   max-width: 700px;
-  background-color: $light-gray;
+  background-color: $body-background;
 
   .submit-button {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .submit-button:hover {
-    color: darken($primary, 15);
+    color: darken($primary, 20);
   }
 }
 
@@ -103,6 +103,7 @@
     margin: 0px 0px 0px 10px;
     padding: 0px 0px;
     width: -webkit-fill-available;
+    font-size: 15px;
   }
 
   // setting default bootstrap margin to 0.
@@ -114,6 +115,7 @@
     width: -webkit-fill-available;
     border-radius: 20px;
     resize:none;
+    color: $form-control-color;
   }
 
   .send-message {
@@ -142,7 +144,7 @@
   padding: 10px 10px;
   margin: 0px 0px;
   z-index: 99;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid $borders;
 
   a {
     text-decoration: none;
@@ -154,7 +156,7 @@
   }
 
   .recipient-message {
-    color: $black;
+    color: $mobile-recipient-color;
     font-size: 16px;
     font-weight: bold;
     margin-left: 10px;

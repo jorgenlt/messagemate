@@ -10,12 +10,12 @@ $body-bg:                 $body-background;
 $font-size-base: 1rem;
 
 // Colors
-$body-color: $gray;
+$body-color: $body-text-color;
 $primary:    $pri;
 $success:    $green;
 $info:       $yellow;
 $danger:     $red;
-$warning:    $orange;
+$warning:    $pri;
 
 // Buttons & inputs' radius
 $border-radius:    20px;
@@ -38,8 +38,12 @@ $input-btn-padding-x-sm:      .5rem;
 $input-btn-padding-y-lg:      .5rem;
 $input-btn-padding-x-lg:      1rem;
 
-$link-hover-color:                        darken($primary, 15);
-$link-hover-decoration:                   null !default;
+$link-hover-color:            darken($primary, 20);
+$link-hover-decoration:       null !default;
+.btn-primary:hover {
+  background-color:           darken($primary, 20) !important;
+  border-color:               darken($primary, 20) !important;;
+}
 
 $btn-hover-bg-shade-amount:       15% !default;
 $btn-hover-bg-tint-amount:        15% !default;
