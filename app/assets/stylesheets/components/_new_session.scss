@@ -4,13 +4,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.form-check-input {
+  background-color: $white;
 }
 
 #new-session, #sign-up {
   width: 350px;
   padding: 30px;
-  box-shadow: 5px 5px 80px rgba(0, 0, 0, 0.40);
-  border-radius: 40px;
+  // box-shadow: 5px 5px 80px rgba(0, 0, 0, 0.40);
+  // border-radius: 40px;
 
   h2 {
     margin-bottom: 20px;

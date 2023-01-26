@@ -12,7 +12,7 @@
   width: 250px;
   min-height: 100vh;
   position: fixed;
-  border-right: 1px solid lightgray;
+  border-right: 1px solid $borders;
 
   a {
     text-decoration: none;
@@ -22,10 +22,9 @@
     position: fixed;
     bottom: 10px;
     left: 0px;
-    font-size: 12px;
 
     a {
-      font-size: 14px;
+      font-size: 15px;
       margin: 5px 20px;
     }
   }
@@ -39,16 +38,16 @@
 .new-chat {
   margin: 0px 0px 0px 0px;
   padding: 10px 0px;
-  background-color: $light-gray;
-  border-bottom: 1px solid lightgray;
+  background-color: $body-background;
+  // border-bottom: 1px solid $borders;
 
   .submit-button {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   p {
     margin: 5px 20px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
   }
 
@@ -72,6 +71,8 @@
   .text {
     border-radius: 20px;
     resize:none;
+    font-size: 15px;
+    color: $form-control-color;
   }
 
   .send-message {
@@ -88,14 +89,15 @@
 .user {
   margin: 10px 0px;
   display: flex;
-  color: $black;
+  color: $user-color;
 
   i {
     font-size: 25px;
   }
 
   .profile-picture {
-    background-color: lightgray;
+    background-color: $profile-pic-bg;
+    color: $black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,11 +109,11 @@
 
   .username {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .last-chat {
-    font-size: 14px;
+    font-size: 15px;
     overflow: hidden;
     max-width: 20ch;
     text-overflow: ellipsis;
