@@ -20,8 +20,8 @@
 
   .log-out {
     position: fixed;
-    bottom: 10px;
-    left: 0px;
+    bottom: 15px;
+    left: 5px;
 
     a {
       font-size: 15px;
@@ -87,7 +87,7 @@
 }
 
 .user {
-  margin: 10px 0px;
+  margin: 15px 0px;
   display: flex;
   color: $user-color;
 
@@ -138,8 +138,12 @@
   }
 
   .user {
+    .username {
+      font-size: 16px;
+    }
     .last-chat {
       max-width: 32ch;
+      font-size: 16px;
     }
   }
 }

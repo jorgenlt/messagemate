@@ -12,10 +12,10 @@ $font-size-base: 1rem;
 // Colors
 $body-color: $body-text-color;
 $primary:    $pri;
-$success:    $green;
-$info:       $yellow;
-$danger:     $red;
-$warning:    $pri;
+$success:    $black;
+$info:       $black;
+$danger:     $black;
+$warning:    $black;
 
 // Buttons & inputs' radius
 $border-radius:    20px;
@@ -38,11 +38,11 @@ $input-btn-padding-x-sm:      .5rem;
 $input-btn-padding-y-lg:      .5rem;
 $input-btn-padding-x-lg:      1rem;
 
-$link-hover-color:            darken($primary, 20);
+$link-hover-color:            $sec;
 $link-hover-decoration:       null !default;
 .btn-primary:hover {
-  background-color:           darken($primary, 20) !important;
-  border-color:               darken($primary, 20) !important;;
+  background-color:           $sec !important;
+  border-color:               $sec !important;;
 }
 
 $btn-hover-bg-shade-amount:       15% !default;
