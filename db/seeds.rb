@@ -28,7 +28,6 @@ puts 'Users created.'
 # puts 'Chatrooms created.'
 
 puts 'Creating chatroom...'
-
 Chatroom.create(
   recipient_id: 2,
   username: User.find(2).username,
@@ -37,7 +36,7 @@ Chatroom.create(
 puts 'Chatroom created.'
 
 puts 'Creating messages...'
-10.times do
+5.times do
   Message.create(
     user_id: 1,
     recipient_id: 2,
@@ -49,6 +48,58 @@ puts 'Creating messages...'
     user_id: 2,
     recipient_id: 1,
     chatroom_id: 1,
+    message_body: Faker::Fantasy::Tolkien.poem
+  )
+end
+puts 'Messages created.'
+
+puts 'Creating chatroom...'
+Chatroom.create(
+  recipient_id: 3,
+  username: User.find(3).username,
+  user_id: 1
+)
+puts 'Chatroom created.'
+
+puts 'Creating messages...'
+8.times do
+  Message.create(
+    user_id: 1,
+    recipient_id: 3,
+    chatroom_id: 2,
+    message_body: Faker::Fantasy::Tolkien.poem
+  )
+
+  Message.create(
+    user_id: 3,
+    recipient_id: 1,
+    chatroom_id: 2,
+    message_body: Faker::Fantasy::Tolkien.poem
+  )
+end
+puts 'Messages created.'
+
+puts 'Creating chatroom...'
+Chatroom.create(
+  recipient_id: 4,
+  username: User.find(4).username,
+  user_id: 1
+)
+puts 'Chatroom created.'
+
+puts 'Creating messages...'
+11.times do
+  Message.create(
+    user_id: 1,
+    recipient_id: 4,
+    chatroom_id: 3,
+    message_body: Faker::Fantasy::Tolkien.poem
+  )
+
+  Message.create(
+    user_id: 4,
+    recipient_id: 1,
+    chatroom_id: 3,
     message_body: Faker::Fantasy::Tolkien.poem
   )
 end
