@@ -81,7 +81,7 @@
     margin: 10px 10px 10px 0px;
 
     .submit-button:hover {
-      color: darken($primary, 15);
+      color: $submit-hover;
     }
   }
 }
