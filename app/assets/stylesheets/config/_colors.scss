@@ -7,7 +7,7 @@ $yellow: #FFC65A;
 $orange: #E67E22;
 $green: #1EDD88;
 $gray: #0E0000;
-$lightgray: lightgray;
+$lightgray: #D2D4DA;
 
 // // Color scheme 1
 // $body-background:           #F4F4F4;
@@ -37,5 +37,6 @@ $mobile-recipient-color:    $white;
 $message-color-sender:      $black;
 $message-color-receiver:    $black;
 $sender-bg:                 $pri;
-$receiver-bg:               $white;
+$receiver-bg:               $lightgray;
 $form-control-color:        $white;
+$form-control-bg:           $black;

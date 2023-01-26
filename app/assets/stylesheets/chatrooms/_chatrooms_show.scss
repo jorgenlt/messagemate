@@ -38,7 +38,7 @@
     background-color: $sender-bg;
     color: $message-color-sender;
     padding: 5px 10px;
-    border-radius: 20px;
+    border-radius: 20px 3px 20px 20px;
   }
 
   .message-sent-at {
@@ -60,7 +60,7 @@
     background-color: $receiver-bg;
     color: $message-color-receiver;
     padding: 5px 10px;
-    border-radius: 20px;
+    border-radius: 3px 20px 20px 20px;
   }
 
   .message-sent-at {
@@ -96,6 +96,7 @@
   display: flex;
   width: 100%;
   margin-right: 10px;
+  padding-bottom: 5px;
 
   .message-text {
     display: flex;
@@ -116,6 +117,7 @@
     border-radius: 20px;
     resize:none;
     color: $form-control-color;
+    background-color: $form-control-bg;
   }
 
   .send-message {
