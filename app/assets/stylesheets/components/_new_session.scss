@@ -54,10 +54,46 @@
   }
 }
 
+.test-users-mobile {
+  color: $borders;
+  font-size: 10px;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  display: none;
+
+  div {
+    gap: 10px;
+    display: flex;
+
+  }
+
+  p {
+    font-weight: bold;
+    margin-bottom: 0px;
+  }
+
+  ul {
+    margin: 5px 0px 0px 0px;
+  }
+  li {
+    list-style: none;
+    margin-left: -33px;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   #new-session, #sign-up {
     width: 100%;
     box-shadow: none;
     border-radius: 0px;
+  }
+
+  .test-users {
+    display: none;
+  }
+  .test-users-mobile {
+    display: flex;
+    flex-direction: column;
   }
 }
