@@ -1,3 +1,4 @@
+<%= render 'shared/loading_animation' %>
 <div class="chat-container">
 
   <div id="render-chat-list">
@@ -48,35 +49,7 @@
   </div>
 </div>
 
+<%# js to stop loading animation %>
+<%= javascript_include_tag('onloadAnimation') %>
 <%# js to scroll down page %>
-<script type="text/javascript">
-  function scrollDownAction() {
-    window.scrollTo(0, document.body.scrollHeight);
-  }
-
-  function scrollDown() {
-      /*
-        The short pause allows any required callback functions
-        to execute before actually highlighting, and allows
-        the JQuery $(document).ready wrapper to finish.
-      */
-      setTimeout(function() {
-          scrollDownAction();
-      }, 200);
-  }
-
-  /*
-    Only trigger the highlighter after document fully loaded.  This is
-    necessary for cases where page load takes a significant length
-    of time to fully load.
-  */
-  if (document.readyState == 'complete') {
-      scrollDown();
-  } else {
-      document.onreadystatechange = function () {
-          if (document.readyState === "complete") {
-              scrollDown();
-          }
-      }
-  }
-</script>
+<%= javascript_include_tag('onloadScrollDownAndLoadingAnimation') %>
