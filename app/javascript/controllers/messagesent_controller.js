@@ -6,6 +6,5 @@ export default class extends Controller {
 
   messageSent() {
     this.messagesentTarget.classList.toggle("d-none");
-    console.log("fuck all")
   }
 }
