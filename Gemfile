@@ -80,3 +80,5 @@ end
 gem 'faker'
 
 gem 'pundit'
+
+gem "cloudinary"

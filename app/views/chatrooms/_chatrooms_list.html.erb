@@ -23,7 +23,11 @@
     <%= link_to chatroom_path(chatroom) do %>
       <div class="user">
         <div class="profile-picture">
-          <i class="fa-solid fa-user"></i>
+          <% if recipient(chatroom).photo.key %>
+            <%= cl_image_tag recipient(chatroom).photo.key, height: 45, width: 45, crop: :fill %>
+          <% else %>
+            <i class="fa-solid fa-user"></i>
+          <% end %>
         </div>
         <div class="user-content">
           <div class="username">

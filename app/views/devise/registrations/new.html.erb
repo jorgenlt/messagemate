@@ -18,6 +18,7 @@
                     label: false,
                     placeholder: 'Email',
                     input_html: { autocomplete: "email" }%>
+        <%= f.input :photo, as: :file, label: 'Profile picture' %>
         <%= f.input :password,
                     required: true,
                     label: false,
