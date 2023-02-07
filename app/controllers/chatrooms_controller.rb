@@ -58,9 +58,9 @@ class ChatroomsController < ApplicationController
 
   def recipient(chatroom)
     if chatroom.user_id == current_user.id
-      User.find(chatroom.recipient_id).username
+      User.find(chatroom.recipient_id)
     else
-      User.find(chatroom.user_id).username
+      User.find(chatroom.user_id)
     end
   end
 

@@ -8,7 +8,7 @@
       <div id="mobile-navbar">
         <%= link_to root_path do %>
           <span class="back-to-chat-list"><i class="fa-solid fa-arrow-left"></i> BACK</span>
-          <span class="recipient-message"><%= recipient(@chatroom) %></span>
+          <span class="recipient-message"><%= recipient(@chatroom).username %></span>
         <% end %>
       </div>
 
