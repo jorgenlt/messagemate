@@ -3,7 +3,7 @@
       <h2>Edit profile</h2>
     <div id="edit-h">
       <div class="profile-picture">
-        <% if current_user.photo.key %>
+        <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, height: 45, width: 45, crop: :fill %>
         <% else %>
           <i class="fa-solid fa-user" style="font-size: 20px"></i>
