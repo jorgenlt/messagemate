@@ -3,7 +3,9 @@
 //   display: none;
 // }
 
-#new-session-container, #sign-up-container {
+#new-session-container,
+#sign-up-container,
+#edit-container {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -19,7 +21,9 @@
   background-color: $white;
 }
 
-#new-session, #sign-up {
+#new-session,
+#sign-up,
+#edit {
   width: 350px;
   padding: 30px;
   // box-shadow: 5px 5px 80px rgba(0, 0, 0, 0.40);
@@ -27,6 +31,19 @@
 
   h2 {
     margin-bottom: 20px;
+  }
+
+  // styling the file upload button
+  ::-webkit-file-upload-button {
+    background-color: $pri;
+    color: $black;
+    font-weight: 400;
+  }
+
+  #file-upload-button {
+    background-color: $pri;
+    color: $black;
+    font-weight: 400;
   }
 }
 
@@ -87,8 +104,35 @@
   }
 }
 
+#edit {
+
+  #user_photo {
+
+  }
+
+  input {
+    border-color: $white;
+
+    &:focus {
+      border-color: $pri;
+    }
+  }
+
+  #edit-h {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 16px;
+      margin: 0px;
+    }
+  }
+}
+
+
 @media only screen and (max-width: 600px) {
-  #new-session, #sign-up {
+  #new-session, #sign-up, #edit {
     width: 100%;
     box-shadow: none;
     border-radius: 0px;

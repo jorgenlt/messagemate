@@ -86,6 +86,20 @@
   }
 }
 
+.profile-picture {
+  background-color: $profile-pic-bg;
+  color: $black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  border: 1px solid $black;
+  margin: 0px 10px;
+  overflow: hidden;
+}
+
 .user {
   margin: 15px 0px;
   display: flex;
@@ -95,22 +109,6 @@
     font-size: 25px;
   }
 
-  .profile-picture {
-    background-color: $profile-pic-bg;
-    color: $black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // height: 45px;
-    width: 45px;
-    border-radius: 50%;
-    margin: 0px 10px;
-    overflow: hidden;
-
-    img {
-
-    }
-  }
 
   .username {
     font-weight: bold;
