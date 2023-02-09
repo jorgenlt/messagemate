@@ -18,7 +18,7 @@
     <% end %>
   </div>
 
-  <% chatrooms = Chatroom.where(user_id: current_user.id).or(Chatroom.where(recipient_id: current_user.id)) %>
+  <% chatrooms = find_chatroom(current_user) %>
   <% chatrooms.each do |chatroom| %>
     <%= link_to chatroom_path(chatroom) do %>
       <div class="user">
@@ -31,18 +31,10 @@
         </div>
         <div class="user-content">
           <div class="username">
-            <% if chatroom.user_id == current_user.id %>
-              <%= User.find(chatroom.recipient_id).username %>
-            <% else %>
-              <%= User.find(chatroom.user_id).username %>
-            <% end %>
+            <%= username(chatroom) %>
           </div>
           <div class="last-chat">
-            <% if Message.where(chatroom_id: chatroom.id).length == 0 %>
-              Send a new message.
-            <% else %>
-              <%= Message.where(chatroom_id: chatroom.id).last.message_body%>
-            <% end %>
+            <%= recent_chat(chatroom) %>
           </div>
         </div>
       </div>
