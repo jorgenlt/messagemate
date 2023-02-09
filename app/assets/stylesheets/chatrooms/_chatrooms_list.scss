@@ -18,135 +18,153 @@
     text-decoration: none;
   }
 
-  .log-out {
-    position: fixed;
-    bottom: 15px;
-    left: 5px;
-
+  .log-out, .edit-account {
     a {
       font-size: 15px;
       margin: 5px 20px;
     }
   }
+
+  .log-out {
+    position: fixed;
+    bottom: 15px;
+    left: 5px;
+  }
+
+  .edit-account {
+    position: fixed;
+    bottom: 15px;
+    left: 140px;
+  }
 }
 
 // .new-chat {
-//   padding: 10px;
-//   border-radius: 20px;
-// }
-
-.new-chat {
-  margin: 0px 0px 0px 0px;
-  padding: 10px 0px;
-  background-color: $body-background;
-  // border-bottom: 1px solid $borders;
-
-  .submit-button {
-    font-size: 15px;
-  }
-
-  p {
-    margin: 5px 20px;
-    font-size: 15px;
-    font-weight: bold;
-  }
-
-  .new-chat-content {
-    display: flex;
-  }
-
-  .message-text {
-    display: flex;
-    align-items: center;
-    margin: 0px 0px 0px 10px;
-    padding: 0px 0px;
-    width: -webkit-fill-available;
-  }
-
-  // setting default bootstrap margin to 0.
-  .mb-3 {
-    margin-bottom: 0px !important;
-  }
-
-  .text {
-    border-radius: 20px;
-    resize:none;
-    font-size: 15px;
-    color: $form-control-color;
-  }
-
-  .send-message {
-    display: flex;
-    align-items: center;
-    margin: 10px 10px 10px 0px;
-
-    .submit-button:hover {
-      color: $submit-hover;
-    }
-  }
-}
-
-.profile-picture {
-  background-color: $profile-pic-bg;
-  color: $black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  width: 45px;
-  border-radius: 50%;
-  border: 1px solid $black;
-  margin: 0px 10px;
-  overflow: hidden;
-}
-
-.user {
-  margin: 15px 0px;
-  display: flex;
-  color: $user-color;
-
-  i {
-    font-size: 25px;
-  }
-
-
-  .username {
-    font-weight: bold;
-    font-size: 15px;
-  }
-
-  .last-chat {
-    font-size: 15px;
-    overflow: hidden;
-    max-width: 20ch;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-}
-
-@media only screen and (max-width: 600px) {
-  .users {
-    width: 100%;
-    border-right: none;
-    position: unset;
-    margin: 0px 10px 50px 10px;
-    min-height: auto;
-  }
+  //   padding: 10px;
+  //   border-radius: 20px;
+  // }
 
   .new-chat {
+    margin: 0px 0px 0px 0px;
+    padding: 10px 0px;
+    background-color: $body-background;
+    // border-bottom: 1px solid $borders;
+
+    .submit-button {
+      font-size: 15px;
+    }
+
+    p {
+      margin: 5px 20px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .new-chat-content {
+      display: flex;
+    }
+
+    .message-text {
+      display: flex;
+      align-items: center;
+      margin: 0px 0px 0px 10px;
+      padding: 0px 0px;
+      width: -webkit-fill-available;
+    }
+
+    // setting default bootstrap margin to 0.
+    .mb-3 {
+      margin-bottom: 0px !important;
+    }
+
     .text {
-      width: 100%;
+      border-radius: 20px;
+      resize:none;
+      font-size: 15px;
+      color: $form-control-color;
+    }
+
+    .send-message {
+      display: flex;
+      align-items: center;
+      margin: 10px 10px 10px 0px;
+
+      .submit-button:hover {
+        color: $submit-hover;
+      }
+    }
+  }
+
+  .profile-picture {
+    background-color: $profile-pic-bg;
+    color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: 1px solid $black;
+    margin: 0px 10px;
+    overflow: hidden;
+
+    img {
+      height: 100%;
     }
   }
 
   .user {
-    .username {
-      font-size: 16px;
+    margin: 15px 0px;
+    display: flex;
+    color: $user-color;
+
+    i {
+      font-size: 25px;
     }
+
+
+    .username {
+      font-weight: bold;
+      font-size: 15px;
+    }
+
     .last-chat {
-      max-width: 32ch;
-      font-size: 16px;
+      font-size: 15px;
+      overflow: hidden;
+      max-width: 20ch;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+  }
+
+  @media only screen and (max-width: 600px) {
+    .users {
+      width: 100%;
+      border-right: none;
+      position: unset;
+      margin: 0px 10px 50px 10px;
+      min-height: auto;
+
+      .edit-account {
+        right: 5px;
+        left: auto;
+      }
+    }
+
+    .new-chat {
+      .text {
+        width: 100%;
+      }
+    }
+
+    .user {
+      .username {
+        font-size: 16px;
+      }
+
+      .last-chat {
+        max-width: 32ch;
+        font-size: 16px;
+      }
     }
   }
-}

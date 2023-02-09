@@ -2,9 +2,9 @@
   <div id="edit">
       <h2>Edit profile</h2>
     <div id="edit-h">
-      <div class="profile-picture">
+      <div class="profile-picture-edit">
         <% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, height: 45, width: 45, crop: :fill %>
+          <%= cl_image_tag current_user.photo.key, height: 200, width: 200, crop: :fill %>
         <% else %>
           <i class="fa-solid fa-user" style="font-size: 20px"></i>
         <% end %>
@@ -31,6 +31,7 @@
                     label: "Confirm new password",
                     input_html: { autocomplete: "new-password" } %>
         <%= f.input :current_password,
+                    hint: "Password is required to save changes.",
                     required: true,
                     input_html: { autocomplete: "current-password" } %>
       </div>
@@ -40,8 +41,8 @@
       </div>
     <% end %>
 
-    <div style="margin-top: 20px">
-      <%= link_to "Back", :back, class: "mt-1" %>
+    <div style="margin-top: 20px; position: absolute; right: 30px; bottom: 15px;">
+      <%= link_to "BACK", :back, class: "mt-1" %>
     </div>
   </div>
 </div>
