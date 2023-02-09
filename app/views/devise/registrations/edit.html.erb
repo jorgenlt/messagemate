@@ -6,7 +6,7 @@
         <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, height: 200, width: 200, crop: :fill %>
         <% else %>
-          <i class="fa-solid fa-user" style="font-size: 20px"></i>
+          <i class="fa-solid fa-user" style="font-size: 75px"></i>
         <% end %>
       </div>
       <h2><%= current_user.username %></h2>

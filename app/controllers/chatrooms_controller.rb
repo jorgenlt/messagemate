@@ -1,11 +1,15 @@
 class ChatroomsController < ApplicationController
-  helper_method :recipient
+  helper_method [
+    :recipient,
+    :find_chatroom,
+    :username,
+    :recent_chat
+  ]
 
   def index
     @new_chatroom = Chatroom.new
 
     @chatroom = policy_scope(Chatroom)
-    # authorize @chatroom
   end
 
   def show
@@ -20,9 +24,6 @@ class ChatroomsController < ApplicationController
   end
 
   def new
-    # # authorize everyone to create a new chatroom with another user.
-    # @chatroom = policy_scope(Chatroom)
-    # authorize @chatroom
   end
 
   # A chatroom is created with recipients id and username,
@@ -62,6 +63,26 @@ class ChatroomsController < ApplicationController
     else
       User.find(chatroom.user_id)
     end
+  end
+
+  def username(chatroom)
+    if chatroom.user_id == current_user.id
+      User.find(chatroom.recipient_id).username
+    else
+      User.find(chatroom.user_id).username
+    end
+  end
+
+  def recent_chat(chatroom)
+    if Message.where(chatroom_id: chatroom.id).length == 0
+      "Send a new message."
+    else
+      Message.where(chatroom_id: chatroom.id).last.message_body
+    end
+  end
+
+  def find_chatroom(user)
+    Chatroom.where(user_id: user.id).or(Chatroom.where(recipient_id: user.id))
   end
 
   private
