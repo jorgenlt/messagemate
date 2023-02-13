@@ -18,7 +18,7 @@ Download for Android: [messagemate.apk](https://www.jorgenlt.me/messagemate.apk)
     width="300"
     height="auto">
   <a
-    href="https://player.vimeo.com/video/793256271?h=70456f8a85&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+    href="https://url.jorgenlt.me/EaOwjv"
     title="MessageMate demo">
     <img
       src="https://user-images.githubusercontent.com/108831121/218423865-8169d956-f8fc-4910-94c7-74b38967d6b2.png"
