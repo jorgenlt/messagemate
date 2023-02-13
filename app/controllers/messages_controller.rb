@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
         @message.recipient_id = @chatroom.user_id
       end
 
-      # instant message with action cable
+      # if the message is saved successfully the message is broadcasted to the Chatroom channel.
       if @message.save
         ChatroomChannel.broadcast_to(
           @chatroom,
