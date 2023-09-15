@@ -2,7 +2,7 @@
 
 # MessageMate - Instant messaging app
 
-The app is live at [messagemate.me](https://www.messagemate.me).
+The app is live at [messagemate.me](https://messagemate.herokuapp.com/).
 
 Download for Android: [messagemate.apk](https://www.jorgenlt.me/messagemate.apk)
 
